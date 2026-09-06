@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elad Hollander</title>
+<style>
+  :root{
+    --bg:#0a0a0c; --fg:#f2f2f0; --muted:#8a8a92; --accent:#6ee7b7; --line:#1e1e22;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{height:100%;}
+  body{
+    background:var(--bg); color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,"Helvetica Neue",sans-serif;
+    display:flex; flex-direction:column; min-height:100vh;
+  }
+  header{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:28px 6vw; border-bottom:1px solid var(--line);
+  }
+  .logo{font-size:1.1rem; letter-spacing:.06em; font-weight:600;}
+  .lang-toggle{
+    cursor:pointer; border:1px solid var(--line); border-radius:999px;
+    padding:6px 16px; font-size:.85rem; color:var(--muted); background:transparent;
+    transition:all .2s;
+  }
+  .lang-toggle:hover{color:var(--fg); border-color:var(--muted);}
+  main{flex:1; display:flex; flex-direction:column; justify-content:center; padding:6vw;}
+  .hero{max-width:760px;}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.6rem); font-weight:700; line-height:1.15; margin-bottom:18px;}
+  .hero p{font-size:1.15rem; color:var(--muted); line-height:1.6; max-width:620px;}
+  .tracks{
+    display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:64px; max-width:900px;
+  }
+  @media(max-width:700px){.tracks{grid-template-columns:1fr;}}
+  .card{
+    border:1px solid var(--line); border-radius:16px; padding:32px;
+    transition:border-color .25s, transform .25s; background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);
+  }
+  .card:hover{border-color:var(--accent); transform:translateY(-2px);}
+  .card h2{font-size:1.3rem; margin-bottom:10px; font-weight:600;}
+  .card p{color:var(--muted); font-size:.95rem; line-height:1.55; margin-bottom:16px;}
+  .card a.btn, .badge{
+    display:inline-block; font-size:.85rem; padding:8px 18px; border-radius:999px;
+  }
+  .card a.btn{
+    color:var(--bg); background:var(--accent); text-decoration:none; font-weight:600;
+  }
+  .badge{color:var(--muted); border:1px dashed var(--line);}
+  .partners{margin-top:14px; font-size:.85rem; color:var(--muted);}
+  footer{
+    padding:24px 6vw; border-top:1px solid var(--line); color:var(--muted); font-size:.8rem;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+  footer a{color:var(--muted);}
+  [data-lang]{display:none;}
+  html[lang="he"] [data-lang="he"]{display:block;}
+  html[lang="en"] [data-lang="en"]{display:block;}
+  html[lang="he"] [data-lang="he"].inline{display:inline;}
+  html[lang="en"] [data-lang="en"].inline{display:inline;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ELAD HOLLANDER</div>
+  <button class="lang-toggle" id="langToggle">EN / עברית</button>
+</header>
+
+<main>
+  <div class="hero">
+    <div data-lang="he">
+      <h1>אלעד הולנדר</h1>
+      <p>מוביל תהליכי יזמות וחדשנות — לעסקים, לסטארטאפים ולארגונים. יזם בעצמי, ובונה כיום את הדור הבא של מנטורינג עסקי מבוסס AI.</p>
+    </div>
+    <div data-lang="en">
+      <h1>Elad Hollander</h1>
+      <p>Leading entrepreneurship &amp; innovation processes — for businesses, startups and organizations. Entrepreneur myself, currently building the next generation of AI-powered business mentoring.</p>
+    </div>
+  </div>
+
+  <div class="tracks">
+    <div class="card">
+      <div data-lang="he">
+        <h2>הובלת תהליכי יזמות</h2>
+        <p>ליווי אסטרטגי ומנטורינג לעסקים ולסטארטאפים — פיתוח עסקי, גיוס משקיעים, בניית תוכניות האצה ומודלים עסקיים בני-קיימא.</p>
+        <a class="btn" href="https://t.me/elad_hermes_agent_bot" target="_blank" rel="noopener">Adam &mdash; העוזר הדיגיטלי שלי</a>
+        <div class="partners">בקרוב: משה | שלמה</div>
+      </div>
+      <div data-lang="en">
+        <h2>Entrepreneurship Leadership</h2>
+        <p>Strategic guidance and mentoring for businesses and startups — business development, fundraising, accelerator programs and sustainable business models.</p>
+        <a class="btn" href="https://t.me/elad_hermes_agent_bot" target="_blank" rel="noopener">Adam &mdash; My Digital Assistant</a>
+        <div class="partners">Coming soon: Moshe | Shlomo</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div data-lang="he">
+        <h2>Engen</h2>
+        <p>המיזם היזמי הנוכחי שלי.</p>
+        <span class="badge">בקרוב</span>
+      </div>
+      <div data-lang="en">
+        <h2>Engen</h2>
+        <p>My current entrepreneurial venture.</p>
+        <span class="badge">Coming soon</span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div>© 2026 Elad Hollander</div>
+  <div><a href="mailto:elad.hollander@gmail.com">elad.hollander@gmail.com</a></div>
+</footer>
+
+<script>
+  const html = document.documentElement;
+  const btn = document.getElementById('langToggle');
+  function setLang(lang){
+    html.setAttribute('lang', lang);
+    html.setAttribute('dir', lang === 'he' ? 'rtl' : 'ltr');
+    localStorage.setItem('eh_lang', lang);
+  }
+  btn.addEventListener('click', () => {
+    setLang(html.getAttribute('lang') === 'he' ? 'en' : 'he');
+  });
+  setLang(localStorage.getItem('eh_lang') || 'he');
+</script>
+
+</body>
+</html>
